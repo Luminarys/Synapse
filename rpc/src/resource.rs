@@ -323,6 +323,9 @@ impl Torrent {
                 self.transferred_down = transferred_down;
                 self.progress = progress;
             }
+            SResourceUpdate::TorrentPath { path, .. } => {
+                self.path = path;
+            }
             SResourceUpdate::TorrentPeers {
                 peers,
                 availability,
